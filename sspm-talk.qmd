@@ -2,7 +2,7 @@
 title: "The `sspm` R package"
 subtitle: "***s**patial **s**urplus **p**roduction **m**odels for the management of northern shrimp fisheries*"
 author: Valentin Lucet (Msc) & Eric Pedersen (PhD)
-institute: "**Concordia University**"
+institute: "**Concordia University, QC, Canada**"
 format: 
   revealjs:
     logo: logo.png
@@ -12,25 +12,25 @@ editor: visual
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
