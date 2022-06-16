@@ -1,0 +1,18 @@
+.reveal section p {
+	/* color: #DD8D29; */
+	font-size: 30px;
+}
+
+.reveal section li {
+  /* color: #DD8D29; */
+	font-size: 30px;
+}
+
+.reveal section ul {
+  /* color: #AD8D29; */
+	font-size: 30px;
+}
+
+.figcaption {
+  font-size: 20px;
+}

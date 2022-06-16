@@ -5,68 +5,89 @@ author: Valentin Lucet (Msc) & Eric Pedersen (PhD)
 institute: "**Concordia University**"
 format: 
   revealjs:
-    theme: default
     logo: logo.png
+    css: styles.css
 editor: visual
 ---
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
----
-
-### How much fish are there?
-
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
-
----
+------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
----
+------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
----
+------------------------------------------------------------------------
+
+### How much fish are there?
+
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+
+------------------------------------------------------------------------
 
 <!--# Modelling populations -->
 
-Early population models such assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
+Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
 
-![](images/log_with_K.png){fig-align="center"}
+![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/log_with_K.png){fig-align="left"}
 
-## Surplus Production Models
+------------------------------------------------------------------------
+
+### Non-stationarity
+
+Models increasingly acknowledge the **non-stationary** nature of wild populations, and work to incorporate environmental fluctuations into dynamic models.
+
+Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
+
+[![Examples of non-stationarity](images/non-stat.png)](https://hess.copernicus.org/articles/25/3897/2021/)
+
+------------------------------------------------------------------------
+
+### Surplus Production Models
 
 -   SPMs are simple, old pop models, in need of updating to account for the non-stationarity of the mechanisms that maintain stocks
 
-## Modelling approaches
+------------------------------------------------------------------------
+
+### Modelling approaches
 
 -   **process-based:** often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) behind population dynamics
 
 -   **statistical:** rely on fitting a model to data using distributional assumptions, and present the advantage of naturally measuring uncertainty around predictions
 
-## Statement of need
+------------------------------------------------------------------------
+
+### The need for `sspm`
 
 1.  Fisheries productivity models, rarely integrate important spatially-structured ecosystem drivers
 2.  Northern Shrimp populations the Newfoundland and Labrador Shelves currently lacks a model
 3.  Current SPM models are rarely spatially explicit and usually cannot account for relevant ecosystem drivers
 4.  Fisheries managers lack user-friendly, flexible tools to implement and apply spatial SPMs
 
-## The sspm workflow
+------------------------------------------------------------------------
 
-1.  Ingestion of variables as well as spatial boundaries and discretization into patches.
-2.  Smoothing data using spatio-temporal GAMs smoothers.
-3.  Computation of productivity values taking into account harvest information.
-4.  Fitting of SSPMs to smoothed data with GAMs.
-5.  Visualization of results, including confidence and prediction intervals.
-6.  One step ahead prediction of biomass.
+### The `sspm` workflow
 
-## (1)...
+Ingestion of variables as well as spatial boundaries and discretization into patches.
+
+1.  Smoothing data using spatio-temporal GAMs smoothers.
+2.  Computation of productivity values taking into account harvest information.
+3.  Fitting of SSPMs to smoothed data with GAMs.
+4.  Visualization of results, including confidence and prediction intervals.
+5.  One step ahead prediction of biomass.
+
+------------------------------------------------------------------------
+
+### (1)...
 
 First step:
 
@@ -74,7 +95,9 @@ First step:
 1 + 1
 ```
 
-## The need for `sspm`
+------------------------------------------------------------------------
+
+### The need for `sspm`
 
 1\. Population models, in particular fisheries productivity models, rarely integrate important spatially-structured ecosystem drivers
 
