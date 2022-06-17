@@ -330,22 +330,22 @@
 
 <h3 id="how-much-fish-are-there">How much fish are there?</h3>
 
-<img data-src="images/forest_0.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund" class="r-stretch quarto-figure-left"><p class="caption">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</p></section>
+<img data-src="images/forest_0.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-1">How much fish are there?</h3>
 
-<img data-src="images/forest_1.png" class="r-stretch quarto-figure-left"><p class="caption">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</p></section>
+<img data-src="images/forest_1.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-2">How much fish are there?</h3>
 
-<img data-src="images/forest_2.png" class="r-stretch quarto-figure-left"><p class="caption">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</p></section>
+<img data-src="images/forest_2.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-3">How much fish are there?</h3>
 
-<img data-src="images/forest_3.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund" class="r-stretch quarto-figure-left"><p class="caption">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</p></section>
+<img data-src="images/forest_3.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
 <section class="slide level2">
 
 <!--# Modelling populations -->
@@ -358,13 +358,34 @@
 <p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations, and work to incorporate environmental fluctuations into dynamic models.</p>
 <p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time.</p>
 
-<img data-src="images/non-stat.png" class="r-stretch quarto-figure-center"><p class="caption">Examples of non-stationarity</p></section>
+<img data-src="images/non-stat.png" class="r-stretch quarto-figure-center"><p class="caption"><em>Examples of non-stationarity</em></p></section>
+<section class="slide level2">
+
+<h3 id="implications-for-fisheries-management">Implications for fisheries management</h3>
+<p>Fisheries managers are:</p>
+<ol type="1">
+<li>Becoming increasingly interested in how variation in ecosystem factors (predator abundance, abiotic variables) impact the spatiotemporal variability of population parameters such as <strong>productivity</strong>.</li>
+<li>Pushing for more <strong>ecosystem-based management</strong> methods in fisheries management</li>
+</ol>
+<p>Treating spatially structured stocks as single unstructured stocks can lead to biased estimates <em>YET</em> stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science</p>
+</section>
 <section class="slide level2">
 
 <h3 id="surplus-production-models">Surplus Production Models</h3>
+<p>Surplus production models (SPMs) are one of the classic models used in fisheries, and are based on modelling changes in the total biomass of a stock in a given location over time (i.e.&nbsp;<em>surplus production</em>) as a function of current stock abundance and fishing pressure:</p>
+<p><span class="math display">\[
+B_t = B_{t-1} + P_{t-1} - C_{t-1}
+\]</span></p>
+<p>Where <span class="math inline">\(B_t\)</span> is the biomass, <span class="math inline">\(P_t\)</span> is productivity and <span class="math inline">\(C_t\)</span> is harvest (i.e.&nbsp;catch)</p>
 <ul>
-<li>SPMs are simple, old pop models, in need of updating to account for the non-stationarity of the mechanisms that maintain stocks</li>
+<li>SPMs are useful in data-poor contexts</li>
+<li>Classically, SPMs assumed single unstructured stocks with purely logistic dynamics</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<h3 id="limitations-of-spms">Limitations of SPMs</h3>
+<p>Two limitations of classic SPMs is the assumption of spatially constant productivity, and that stock productivity is affected only by stock abundance and fishing. These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure. One example is that of the Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime <span class="citation" data-cites="dfo_assessment_2019">[@dfo_assessment_2019]</span>. These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region. In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target <span class="citation" data-cites="karp_accounting_2019">[@karp_accounting_2019]</span>, and managers need better methods that account for varying productivity <span class="citation" data-cites="szuwalski_climate_2016">[@szuwalski_climate_2016]</span>.</p>
 </section>
 <section class="slide level2">
 
@@ -373,6 +394,16 @@
 <li><p><strong>process-based:</strong> often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) behind population dynamics</p></li>
 <li><p><strong>statistical:</strong> rely on fitting a model to data using distributional assumptions, and present the advantage of naturally measuring uncertainty around predictions</p></li>
 </ul>
+<p>Population models like SPMs usually fall under two categories: process-based and statistical. Process-based models often rely on differential or difference equations and are based on replicating the underlying processes (e.g., predation, recruitment, dispersal) driving population dynamics. Statistical models instead fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions. This allows for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models <span class="citation" data-cites="plaganyi2014Multispecies">[@plaganyi2014Multispecies]</span>. Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary. In this paper, we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the <code>mgcv</code> R package <span class="citation" data-cites="wood_generalized_2017">[@wood_generalized_2017]</span> as the backend. We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space. The resulting model is a spatial SPM (SSPM), implemented via a R package <code>sspm</code>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="gams-equations">GAMS + equations?</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="section">????</h3>
+<p>While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks <span class="citation" data-cites="pedersenNewSpatialEcosystembased2021">[@pedersenNewSpatialEcosystembased2021]</span>, The R package <code>sspm</code> is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock. The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors. It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in .</p>
 </section>
 <section class="slide level2">
 
@@ -398,7 +429,7 @@
 </section>
 <section class="slide level2">
 
-<h3 id="section">(1)…</h3>
+<h3 id="section-1">(1)…</h3>
 <p>First step:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">

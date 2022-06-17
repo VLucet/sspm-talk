@@ -48,13 +48,39 @@ Models increasingly acknowledge the **non-stationary** nature of wild population
 
 Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
 
-[![Examples of non-stationarity](images/non-stat.png)](https://hess.copernicus.org/articles/25/3897/2021/)
+[![*Examples of non-stationarity*](images/non-stat.png)](https://hess.copernicus.org/articles/25/3897/2021/)
+
+------------------------------------------------------------------------
+
+### Implications for fisheries management
+
+Fisheries managers are:
+
+1. Becoming increasingly interested in how variation in ecosystem factors (predator abundance, abiotic variables) impact the spatiotemporal variability of population parameters such as **productivity**. 
+2. Pushing for more **ecosystem-based management** methods in fisheries management
+
+Treating spatially structured stocks as single unstructured stocks can lead to biased estimates *YET* stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science
 
 ------------------------------------------------------------------------
 
 ### Surplus Production Models
 
--   SPMs are simple, old pop models, in need of updating to account for the non-stationarity of the mechanisms that maintain stocks
+Surplus production models (SPMs) are one of the classic models used in fisheries, and are based on modelling changes in the total biomass of a stock in a given location over time (i.e. *surplus production*) as a function of current stock abundance and fishing pressure:
+
+$$
+B_t = B_{t-1} + P_{t-1} - C_{t-1}
+$$
+Where $B_t$ is the biomass, $P_t$ is productivity and $C_t$ is harvest (i.e. catch)
+
+-   SPMs are useful in data-poor contexts 
+-   Classically, SPMs assumed single unstructured stocks with purely logistic dynamics
+  
+------------------------------------------------------------------------
+
+### Limitations of SPMs
+
+Two limitations of classic SPMs is the assumption of spatially constant productivity, and that stock productivity is affected only by stock abundance and fishing. These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure. One example is that of the Northern Shrimp (*Pandalus borealis*) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime [@dfo_assessment_2019]. These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region. In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target [@karp_accounting_2019], and managers need better methods that account for varying productivity [@szuwalski_climate_2016].
+
 
 ------------------------------------------------------------------------
 
@@ -63,6 +89,18 @@ Population models designed to answer applied resource management questions, such
 -   **process-based:** often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) behind population dynamics
 
 -   **statistical:** rely on fitting a model to data using distributional assumptions, and present the advantage of naturally measuring uncertainty around predictions
+
+Population models like SPMs usually fall under two categories: process-based and statistical. Process-based models often rely on differential or difference equations and are based on replicating the underlying processes (e.g., predation, recruitment, dispersal) driving population dynamics. Statistical models instead fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions. This allows for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models [@plaganyi2014Multispecies]. Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary. In this paper, we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the `mgcv` R package [@wood_generalized_2017] as the backend. We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space. The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
+
+------------------------------------------------------------------------
+
+### GAMS + equations?
+
+------------------------------------------------------------------------
+
+### ????
+
+While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks [@pedersenNewSpatialEcosystembased2021], The R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock. The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors. It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in \autoref{fig:workflow}.
 
 ------------------------------------------------------------------------
 
