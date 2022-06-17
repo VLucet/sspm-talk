@@ -29,6 +29,8 @@
   <link href="sspm-talk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="sspm-talk_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="sspm-talk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="sspm-talk_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="sspm-talk_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="sspm-talk_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -358,7 +360,7 @@
 <p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations, and work to incorporate environmental fluctuations into dynamic models.</p>
 <p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time.</p>
 
-<img data-src="images/non-stat.png" class="r-stretch quarto-figure-center"><p class="caption"><em>Examples of non-stationarity</em></p></section>
+<img data-src="images/non-stat.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Examples of non-stationarity</em></p></section>
 <section class="slide level2">
 
 <h3 id="implications-for-fisheries-management">Implications for fisheries management</h3>
@@ -377,44 +379,70 @@
 B_t = B_{t-1} + P_{t-1} - C_{t-1}
 \]</span></p>
 <p>Where <span class="math inline">\(B_t\)</span> is the biomass, <span class="math inline">\(P_t\)</span> is productivity and <span class="math inline">\(C_t\)</span> is harvest (i.e.&nbsp;catch)</p>
-<ul>
-<li>SPMs are useful in data-poor contexts</li>
-<li>Classically, SPMs assumed single unstructured stocks with purely logistic dynamics</li>
-</ul>
+<p>SPMs are useful in data-poor contexts, for example in the absence of population structure data</p>
 </section>
 <section class="slide level2">
 
 <h3 id="limitations-of-spms">Limitations of SPMs</h3>
-<p>Two limitations of classic SPMs is the assumption of spatially constant productivity, and that stock productivity is affected only by stock abundance and fishing. These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure. One example is that of the Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime <span class="citation" data-cites="dfo_assessment_2019">[@dfo_assessment_2019]</span>. These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region. In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target <span class="citation" data-cites="karp_accounting_2019">[@karp_accounting_2019]</span>, and managers need better methods that account for varying productivity <span class="citation" data-cites="szuwalski_climate_2016">[@szuwalski_climate_2016]</span>.</p>
+<p>SPMS assumptions:</p>
+<ol type="1">
+<li>Spatially <strong>constant</strong> productivity</li>
+<li>Stock productivity is affected <strong>only</strong> by stock abundance and fishing.</li>
+<li>Classically, single unstructured stocks with purely <strong>logistic</strong> dynamics</li>
+</ol>
+<p>These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="northern-shrimp">Northern Shrimp</h3>
+<p>The Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime.</p>
+<p>These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region.</p>
+<!-- In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target and managers need better methods that account for varying productivity. -->
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
+<figure>
+<p><a href=""><img data-src="images/map.png"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
+<figure>
+<p><a href="https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view"><img data-src="images/pandalus_borealis.jpg"></a></p>
+<p></p><figcaption aria-hidden="true"><em>Shrimp fishing divisions &amp; Pandalus borealis</em></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
 <h3 id="modelling-approaches">Modelling approaches</h3>
 <ul>
-<li><p><strong>process-based:</strong> often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) behind population dynamics</p></li>
-<li><p><strong>statistical:</strong> rely on fitting a model to data using distributional assumptions, and present the advantage of naturally measuring uncertainty around predictions</p></li>
+<li><p><strong>process-based:</strong> often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) driving population dynamics</p></li>
+<li><p><strong>statistical:</strong> fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions.</p></li>
 </ul>
-<p>Population models like SPMs usually fall under two categories: process-based and statistical. Process-based models often rely on differential or difference equations and are based on replicating the underlying processes (e.g., predation, recruitment, dispersal) driving population dynamics. Statistical models instead fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions. This allows for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models <span class="citation" data-cites="plaganyi2014Multispecies">[@plaganyi2014Multispecies]</span>. Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary. In this paper, we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the <code>mgcv</code> R package <span class="citation" data-cites="wood_generalized_2017">[@wood_generalized_2017]</span> as the backend. We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space. The resulting model is a spatial SPM (SSPM), implemented via a R package <code>sspm</code>.</p>
+<p>Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models</p>
+<p>Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary.</p>
 </section>
 <section class="slide level2">
 
-<h3 id="gams-equations">GAMS + equations?</h3>
-</section>
-<section class="slide level2">
+<h3 id="spatial-spms">Spatial SPMs</h3>
+<p>we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the <code>mgcv</code> R package as the backend.</p>
+<p>We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space.</p>
+<p>The resulting model is a spatial SPM (SSPM), implemented via a R package <code>sspm</code>.</p>
 
-<h3 id="section">????</h3>
-<p>While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks <span class="citation" data-cites="pedersenNewSpatialEcosystembased2021">[@pedersenNewSpatialEcosystembased2021]</span>, The R package <code>sspm</code> is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock. The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors. It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in .</p>
-</section>
+<img data-src="images/stats_features.png" class="r-stretch quarto-figure-center"></section>
 <section class="slide level2">
 
 <h3 id="the-need-for-sspm">The need for <code>sspm</code></h3>
 <ol type="1">
-<li>Fisheries productivity models, rarely integrate important spatially-structured ecosystem drivers</li>
+<li>Fisheries productivity models rarely integrate important spatially-structured ecosystem drivers</li>
 <li>Northern Shrimp populations the Newfoundland and Labrador Shelves currently lacks a model</li>
 <li>Current SPM models are rarely spatially explicit and usually cannot account for relevant ecosystem drivers</li>
 <li>Fisheries managers lack user-friendly, flexible tools to implement and apply spatial SPMs</li>
 </ol>
-</section>
+
+<img data-src="images/logo.png" class="r-stretch quarto-figure-center"></section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow">The <code>sspm</code> workflow</h3>
@@ -429,23 +457,16 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 </section>
 <section class="slide level2">
 
-<h3 id="section-1">(1)…</h3>
-<p>First step:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
+
+<img data-src="images/flowchart.png" class="r-stretch quarto-figure-center"></section>
 <section class="slide level2">
 
-<h3 id="the-need-for-sspm-1">The need for <code>sspm</code></h3>
-<p>1. Population models, in particular fisheries productivity models, rarely integrate important spatially-structured ecosystem drivers</p>
-<p>2. The Northern Shrimp stock in the Newfoundland and Labrador Shelves currently lacks a population model</p>
-<p>3. Current SPM models are rarely spatially explicit and usually cannot account for relevant ecosystem drivers</p>
-<p>4. Fisheries managers lack user-friendly, flexible tools to implement and apply SSPMs</p>
+<h3 id="generalizing-the-sspm-approach">Generalizing the SSPM approach</h3>
+<p>While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package <code>sspm</code> is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.</p>
+<p>The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.</p>
+<p>It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in .</p>
 
-<img src="logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section>
@@ -459,6 +480,7 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
   <script src="sspm-talk_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="sspm-talk_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="sspm-talk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="sspm-talk_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="sspm-talk_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -480,7 +502,8 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -651,7 +674,7 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -660,48 +683,6 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
