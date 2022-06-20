@@ -8,30 +8,32 @@ format:
     chalkboard: true
     logo: images/logo.png
     css: styles.css
+    transition: fade
+    transition-speed: fast
 editor: visual
 ---
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
@@ -39,7 +41,7 @@ editor: visual
 
 Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
@@ -49,7 +51,7 @@ Models increasingly acknowledge the **non-stationary** nature of wild population
 
 Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
 
-[![*Examples of non-stationarity*](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
+[![Examples of non-stationarity](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
 
 ------------------------------------------------------------------------
 
@@ -57,8 +59,8 @@ Population models designed to answer applied resource management questions, such
 
 Fisheries managers are:
 
-1. Becoming increasingly interested in how variation in ecosystem factors (predator abundance, abiotic variables) impact the spatiotemporal variability of population parameters such as **productivity**. 
-2. Pushing for more **ecosystem-based management** methods in fisheries management
+1.  Becoming increasingly interested in how variation in ecosystem factors (predator abundance, abiotic variables) impact the spatiotemporal variability of population parameters such as **productivity**.
+2.  Pushing for more **ecosystem-based management** methods in fisheries management
 
 Treating spatially structured stocks as single unstructured stocks can lead to biased estimates *YET* stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science
 
@@ -70,22 +72,21 @@ Surplus production models (SPMs) are one of the classic models used in fisheries
 
 $$
 B_t = B_{t-1} + P_{t-1} - C_{t-1}
-$$
-Where $B_t$ is the biomass, $P_t$ is productivity and $C_t$ is harvest (i.e. catch)
+$$ Where $B_t$ is the biomass, $P_t$ is productivity and $C_t$ is harvest (i.e. catch)
 
 SPMs are useful in data-poor contexts, for example in the absence of population structure data
-  
+
 ------------------------------------------------------------------------
 
 ### Limitations of SPMs
 
 SPMS assumptions:
 
-1. Spatially **constant** productivity 
-2. Stock productivity is affected **only** by stock abundance and fishing. 
-3. Classically, single unstructured stocks with purely **logistic** dynamics
+1.  Spatially **constant** productivity
+2.  Stock productivity is affected **only** by stock abundance and fishing.
+3.  Classically, single unstructured stocks with purely **logistic** dynamics
 
-These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure. 
+These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure.
 
 ------------------------------------------------------------------------
 
@@ -93,40 +94,15 @@ These assumptions ignore the effect of global changes that are affecting fisheri
 
 The Northern Shrimp (*Pandalus borealis*) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime.
 
-These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region. 
+These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region.
 
 <!-- In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target and managers need better methods that account for varying productivity. -->
 
-::: {layout-ncol=2}
+::: {layout-ncol="2"}
+![](images/map.png){fig-align="center"}
 
-[![](images/map.png){fig-align="center"}]()
-
-[![*Shrimp fishing divisions & Pandalus borealis*](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
-
+[![Shrimp fishing divisions & Pandalus borealis](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
 :::
-------------------------------------------------------------------------
-
-### Modelling approaches
-
--   **process-based:** often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) driving population dynamics
-
--   **statistical:** fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions. 
-
-Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models 
-
-Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary. 
-
-------------------------------------------------------------------------
-
-### Spatial SPMs
-
-we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the `mgcv` R package as the backend. 
-
-We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space. 
-
-The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
-
-[![](images/stats_features.png){fig-align="center"}]()
 
 ------------------------------------------------------------------------
 
@@ -141,26 +117,101 @@ The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
 
 ------------------------------------------------------------------------
 
-### The `sspm` workflow
+### Modelling approaches
 
-Ingestion of variables as well as spatial boundaries and discretization into patches.
+-   **process-based:** often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) driving population dynamics
 
-1.  Smoothing data using spatio-temporal GAMs smoothers.
-2.  Computation of productivity values taking into account harvest information.
-3.  Fitting of SSPMs to smoothed data with GAMs.
-4.  Visualization of results, including confidence and prediction intervals.
-5.  One step ahead prediction of biomass.
+-   **statistical:** fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions.
+
+Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models
+
+Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary.
 
 ------------------------------------------------------------------------
 
-[![](images/flowchart.png){fig-align="center"}]()
+### Spatial SPMs
+
+we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the `mgcv` R package as the backend.
+
+We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space.
+
+The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
+
+![](images/stats_features.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+1.  Ingestion of variables (biomass, predictors, catch...)
+
+```{.R code-line-numbers="|4,12|6,14"}
+borealis_dataset <- 
+  spm_as_dataset(data = borealis,
+                 name = "borealis",
+                 time = "year_f",
+                 coords = c('lon_dec','lat_dec'),
+                 density = "weight_per_km2",
+                 uniqueID = "trawl_id")
+                 
+predator_dataset <- 
+  spm_as_dataset(data = predator,
+                 name = "predator",
+                 time = "year_f",
+                 uniqueID = "record_id",
+                 density = c("cod", "redfish", "turbot"),
+                 coords = c("lon_dec", "lat_dec"),
+                 boundaries = bounds)
+```
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+2.  Ingestion spatial boundaries
+
+![](images/SFAs.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+3.  Discretization of spatial boundaries into patches.
+
+![](images/Discretized.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+4.  Smoothing data using spatio-temporal GAMs smoothers.
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+5.  Computation of productivity values taking into account harvest information.
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+6.  Fitting of SSPMs to smoothed data with GAMs.
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+7.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
+
+<!-- [![](images/flowchart.png){fig-align="center"}]() -->
 
 ------------------------------------------------------------------------
 
 ### Generalizing the SSPM approach
 
-While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock. 
+While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
 
-The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors. 
+The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.
 
 It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in \autoref{fig:workflow}.
