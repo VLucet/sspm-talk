@@ -391,15 +391,24 @@ Finally, we run the model, specifying once again a formula using the package-spe
 ![](images/preds.png){fig-align="center" width=800px}
 
 ::: notes
-The results from the model can be plotted. By default, the package plots the smoothed biomass, aling with the predictions and the correct prediction and or confidence intervals.
+The results from the model can be plotted. Here, the results are faceted by spatial boundaries (the 4 different shrimp fishing areas)
 :::
 
 ------------------------------------------------------------------------
 
 ### The `sspm` workflow
 
-7.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
+::: {layout-ncol="2"}
+![](images/preds_trunc.png){width="750px" fig-align="center"}
 
+![](images/legend.png){width="250px" fig-align="center"}
+:::
+
+::: notes
+By default, the package plots the smoothed biomass (in black, the smoothed observations), along with the predictions (in red, the predicted biomass computed from the predicted productivity). 
+
+In addition, users can plot the confidence (darker shade) and prediction intervals (lighter shade).
+:::
 
 ------------------------------------------------------------------------
 

@@ -937,7 +937,7 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 </figure>
 </div>
 <aside class="notes">
-<p>The results from the model can be plotted. By default, the package plots the smoothed biomass, aling with the predictions and the correct prediction and or confidence intervals.</p>
+<p>The results from the model can be plotted. Here, the results are faceted by spatial boundaries (the 4 different shrimp fishing areas)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -953,9 +953,38 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow-8">The <code>sspm</code> workflow</h3>
-<ol start="7" type="1">
-<li>Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.</li>
-</ol>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 75.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/preds_trunc.png" width="750"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/legend.png" width="250"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>By default, the package plots the smoothed biomass (in black, the smoothed observations), along with the predictions (in red, the predicted biomass computed from the predicted productivity).</p>
+<p>In addition, users can plot the confidence (darker shade) and prediction intervals (lighter shade).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
