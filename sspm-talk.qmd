@@ -10,30 +10,38 @@ format:
     css: styles.css
     transition: fade
     transition-speed: fast
+    slide-number: "c/t"
 editor: visual
 ---
 
+<!--
+Hi, My name is Val and today I will be presenting a R packaged developed for the management of northern shrimp fisheries 
+-->
+
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+
+::: {.notes}
+I'd like to start with a timeless question in fisheries management
+:::
+------------------------------------------------------------------------
+
+### How much fish are there?
+
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
-
-------------------------------------------------------------------------
-
-### How much fish are there?
-
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
@@ -41,7 +49,7 @@ editor: visual
 
 Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
@@ -51,7 +59,7 @@ Models increasingly acknowledge the **non-stationary** nature of wild population
 
 Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
 
-[![Examples of non-stationarity](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
+[![*Examples of non-stationarity*](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
 
 ------------------------------------------------------------------------
 
@@ -101,7 +109,7 @@ These stocks currently lack a population model to understand the drivers of this
 ::: {layout-ncol="2"}
 ![](images/map.png){fig-align="center"}
 
-[![Shrimp fishing divisions & Pandalus borealis](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
+[![*Shrimp fishing divisions & Pandalus borealis*](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
 :::
 
 ------------------------------------------------------------------------
@@ -168,43 +176,56 @@ predator_dataset <-
 
 ### The `sspm` workflow
 
-2.  Ingestion spatial boundaries
+2.  Ingestion and discretization of spatial boundaries into patches.
 
-![](images/SFAs.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-### The `sspm` workflow
-
-3.  Discretization of spatial boundaries into patches.
-
-![](images/Discretized.png){fig-align="center"}
+![](images/disc_step_trunc.png){fig-align="left"}
 
 ------------------------------------------------------------------------
 
 ### The `sspm` workflow
 
-4.  Smoothing data using spatio-temporal GAMs smoothers.
+3.  Smoothing data using spatio-temporal GAMs smoothers.
+
+![](images/disc_step.png){fig-align="left"}
 
 ------------------------------------------------------------------------
 
 ### The `sspm` workflow
 
-5.  Computation of productivity values taking into account harvest information.
+4.  Computation of productivity values taking into account harvest information.
+
+```{.R}
+borealis_dataset_with_catch <-
+  spm_aggregate_catch(biomass = borealis_dataset_fitted,
+                      catch = catch_data,
+                      biomass_variable = "weight_per_km2",
+                      catch_variable = "catch",
+                      corrections = landings_corrections,
+                      fill = mean)
+```
 
 ------------------------------------------------------------------------
 
 ### The `sspm` workflow
 
-6.  Fitting of SSPMs to smoothed data with GAMs.
+5.  Fitting of SSPMs to smoothed data with GAMs.
+
+```{.R code-line-numbers="|2,3"}
+sspm_fit <- sspm_model_split %>%
+  spm(log_productivity ~ cod_lag_1 + other_predator_lag_1 +
+        smooth_space() + smooth_space(by=weight_per_km2_lag_1),
+      select = TRUE, 
+      family = scat,
+      method="REML")
+```
 
 ------------------------------------------------------------------------
 
 ### The `sspm` workflow
 
-7.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
+6.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
 
-<!-- [![](images/flowchart.png){fig-align="center"}]() -->
+[![](images/preds.png){fig-align="center"}]()
 
 ------------------------------------------------------------------------
 
@@ -215,3 +236,28 @@ While the initial application of this model was modelling Newfoundland and Labra
 The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.
 
 It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in \autoref{fig:workflow}.
+
+------------------------------------------------------------------------
+
+#### Thank you!
+
+Twitter, Github: `@vlucet`
+
+With the support of:
+
+::: {layout-ncol=2}
+
+![](images/concordia-logo.webp)
+
+![](images/logo-DFO-wide.jpg)
+
+:::
+
+![](images/nserc.png){width=300px fig-align="center"}
+
+
+*Thanks to the members of the Pedersen Lab:*
+
+*Eric Pedersen, Fonya Irvine, John-Philip Williams, Kyle Krumsick, Danielle Mac Rae, Alienor Stahl*
+
+
