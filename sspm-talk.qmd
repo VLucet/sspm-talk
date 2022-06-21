@@ -29,7 +29,11 @@ I'd like to start with a timeless question in fisheries management: how much fis
 [![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
-Borrowing from an example by Jesse Agar from the CSF, let's imagine counting the amount of trees in a forest. Once you've decided what counts as a tree, you would likely set up sampling areas across the forest.
+Borrowing from an example by Jesse Agar from the CSF, let's imagine counting the amount of trees in a forest.
+
+The first step would be to define what a tree is for the sake of the survey, making sure you wont count saplings for example.
+
+Once you've decided what counts as a tree, you would likely set up sampling areas across the forest.
 :::
 
 ------------------------------------------------------------------------
@@ -39,7 +43,7 @@ Borrowing from an example by Jesse Agar from the CSF, let's imagine counting the
 [![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
-You would then use the resulting samples to infer the amount of tree in the forest, with a given amount of associated uncertainty.
+You would then use the resulting samples to infer the amount of tree in the forest, with a given amount of associated uncertainty. You might use some kind of model to make the most of the information contained in the samples.
 :::
 
 ------------------------------------------------------------------------
@@ -49,7 +53,10 @@ You would then use the resulting samples to infer the amount of tree in the fore
 [![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
-Now imagine that  your trees move and aggregate, are predated upon at different rates depending on where they are, and are harvested by multiple actors at different time periods. The spatio-temporal variability inherent to fish populations complexifies the task of estimating stock sizes.
+Now imagine that  your trees move and aggregate, are predated upon at different rates depending on where they are, and are harvested by multiple actors at different time periods. 
+This is all just to take measure of the spatio-temporal variability inherent to fish populations.
+
+This variability greatly complexifies the task of estimating fish stock sizes.
 :::
 
 <!-- ------------------------------------------------------------------------ -->
@@ -84,7 +91,7 @@ Models increasingly acknowledge the **non-stationary** nature of wild population
 
 Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
 
-Treating spatially structured stocks as single unstructured stocks can lead to biased estimates *YET* stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science
+We know that Treating spatially structured stocks as single unstructured stocks can lead to biased estimates *YET* stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science
 :::
 
 ------------------------------------------------------------------------
@@ -101,6 +108,8 @@ Treating spatially structured stocks as single unstructured stocks can lead to b
 
 ::: notes
 There would be two families of approaches for dealing with non-stationarity
+
+[READ]
 
 Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models
 
@@ -173,7 +182,7 @@ We apply this approach to the population of **Northern Shrimp** of the Newfoundl
 
 The two main smoothing properties we use is random effects with penalty in time, as well as a Markov Random Field smoother across space
 
-The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
+The resulting model is a spatial SPM (SSPM), implemented via our R package.
 :::
 
 ------------------------------------------------------------------------
@@ -188,9 +197,11 @@ Fisheries managers are:
 [![](images/EBM.png){fig-align="center" width=700px}](https://www.researchgate.net/figure/From-single-stock-to-Ecosystem-Based-Management-after-Dolan-et-al-2016_fig1_335802828)
 
 ::: notes
-These models have important implocations for fisheries management because...
+These models have important implications for fisheries management because...
 
 [READ]
+
+We are moving away from single-species model and toward a more accurate picture of the ecosystem factors that impact stocks.
 :::
 
 ------------------------------------------------------------------------
@@ -299,14 +310,16 @@ Once discretized, biomass and predictors are smoothed to produce an estimate for
 
 ```{.R code-line-numbers="|2,3"}
 borealis_dataset_fitted <-  borealis_dataset %>%
-  spm_smooth(weight_per_km2 ~ sfa+smooth_time(by = sfa) + smooth_space() +
-             smooth_space_time(k = c(NA,30)),
+  spm_smooth(weight_per_km2 ~ sfa + smooth_time(by = sfa) + 
+             smooth_space() + smooth_space_time(k = c(NA,30)),
              boundaries = bounds,
              keep_fit = TRUE)
 ```
 
 ::: notes
 The smoothing process is highly flexible as it allows for any type of GAM specifications, but the package supports special smoothing terms to improve usability and simplify the modelling process for managers.
+
+The smooth_time() terms adds a random effect for time, where as the Markov Random Field smoother term smooth_space() adds a spatial smoothers to model the interactions between adjacent patches. 
 :::
 
 ------------------------------------------------------------------------
@@ -315,7 +328,7 @@ The smoothing process is highly flexible as it allows for any type of GAM specif
 
 4.  Computation of productivity values taking into account harvest information.
 
-``` {.R}
+```{.R}
 borealis_dataset_with_catch <-
   spm_aggregate_catch(biomass = borealis_dataset_fitted,
                       catch = catch_data,
@@ -333,10 +346,9 @@ The next step consists in using the harvest data to compute productivities withi
 
 ### The `sspm` workflow
 
-4.  Computation of productivity values taking into account harvest information.
+5. Combining data and preparing to model
 
-
-```{.R, code-line-numbers="|1-2|5-8"}
+```{.R code-line-numbers="|1-2|5-8"}
 sspm_model <- sspm(biomass = borealis_dataset_with_catch,
                    predictors = predator_dataset_fitted)
                    
@@ -355,12 +367,12 @@ Before running the model, the package allows users to combine data, split the da
 
 ### The `sspm` workflow
 
-5.  Fitting of SSPMs to smoothed data with GAMs.
+6.  Fitting of SSPMs to smoothed data with GAMs.
 
 ``` {.R code-line-numbers="|2,3"}
 sspm_fit <- sspm_model_split %>%
   spm(log_productivity ~ cod_lag_1 + other_predator_lag_1 +
-        smooth_space() + smooth_space(by=weight_per_km2_lag_1),
+        smooth_space() + smooth_space(by = weight_per_km2_lag_1),
       select = TRUE, 
       family = scat,
       method="REML")
@@ -374,30 +386,32 @@ Finally, we run the model, specifying once again a formula using the package-spe
 
 ### The `sspm` workflow
 
-6.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
+7.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
 
 ![](images/preds.png){fig-align="center" width=800px}
 
 ::: notes
-The results fo the 
+The results from the model can be plotted. By default, the package plots the smoothed biomass, aling with the predictions and the correct prediction and or confidence intervals.
 :::
 
 ------------------------------------------------------------------------
 
 ### Generalizing the SSPM approach
 
+&nbsp;
+
 The R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
 
 &nbsp;
 
+**In summary:**
+
 The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.
 
 ::: notes
-
 While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
 
 The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.
-
 :::
 
 ------------------------------------------------------------------------
