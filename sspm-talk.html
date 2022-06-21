@@ -400,11 +400,11 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 <div class="quarto-figure quarto-figure-left">
 <figure>
 <p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/forest_0.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund"></a></p>
-<p></p><figcaption aria-hidden="true"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
 </figure>
 </div>
 <aside class="notes">
-<p>I’d like to start with a timeless question in fisheries management</p>
+<p>I’d like to start with a timeless question in fisheries management: how much fish is there in a given stock, and how muchm is it safe to harvest? How does one go about counting fish?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -420,31 +420,122 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-1">How much fish are there?</h3>
-
-<img data-src="images/forest_1.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/forest_1.png"></a></p>
+<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Borrowing from an example by Jesse Agar from the CSF, let’s imagine trying to count the amount of trees in a forest. Once you’ve decided what counts as a tree and not a bush or a sapling, you would like set up sampling areas across the forest.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-2">How much fish are there?</h3>
-
-<img data-src="images/forest_2.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/forest_2.png"></a></p>
+<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
+</figure>
+</div>
+<aside class="notes">
+<p>You would then use the resulting samples to infer the amount of tree in the forest, with a given amount of associated uncertainty.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="how-much-fish-are-there-3">How much fish are there?</h3>
-
-<img data-src="images/forest_3.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/forest_3.png" alt="Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund"></a></p>
+<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Now imagine that the same idea for counting fish, except that fishes move, aggregate, are predated upon at different rates depending on where they move, and are harvested in fisheries. The specifics characteristics of fish populations makes the task of counting fish move beyond the simple sampling process I just described.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <!--# Modelling populations -->
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/log_with_K.png"></a></p>
+<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
+</figure>
+</div>
+<aside class="notes">
 <p>Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant</p>
-
-<img data-src="images/log_with_K.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</em></p></section>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="non-stationarity">Non-stationarity</h3>
-<p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations, and work to incorporate environmental fluctuations into dynamic models.</p>
-<p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time.</p>
-
-<img data-src="images/non-stat.png" class="r-stretch quarto-figure-left"><p class="caption"><em>Examples of non-stationarity</em></p></section>
+<p>&nbsp;</p>
+<p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations</p>
+<p>&nbsp;</p>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><a href="https://hess.copernicus.org/articles/25/3897/2021/"><img data-src="images/non-stat.png"></a></p>
+<p></p><figcaption aria-hidden="true">Examples of non-stationarity</figcaption><p></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations. Data is said to be non-stationary if its means, variance, and covariance change over time.</p>
+<p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time, and models increasingly incorporate environmental fluctuations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="implications-for-fisheries-management">Implications for fisheries management</h3>
@@ -493,7 +584,7 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure>
 <p><a href="https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view"><img data-src="images/pandalus_borealis.jpg"></a></p>
-<p></p><figcaption aria-hidden="true"><em>Shrimp fishing divisions &amp; Pandalus borealis</em></figcaption><p></p>
+<p></p><figcaption aria-hidden="true">Shrimp fishing divisions &amp; Pandalus borealis</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -573,7 +664,7 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <ol start="4" type="1">
 <li>Computation of productivity values taking into account harvest information.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>borealis_dataset_with_catch <span class="ot">&lt;-</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>borealis_dataset_with_catch <span class="ot">&lt;-</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">spm_aggregate_catch</span>(<span class="at">biomass =</span> borealis_dataset_fitted,</span>
 <span id="cb2-3"><a href="#cb2-3"></a>                      <span class="at">catch =</span> catch_data,</span>
 <span id="cb2-4"><a href="#cb2-4"></a>                      <span class="at">biomass_variable =</span> <span class="st">"weight_per_km2"</span>,</span>

@@ -14,52 +14,76 @@ format:
 editor: visual
 ---
 
+```{=html}
 <!--
 Hi, My name is Val and today I will be presenting a R packaged developed for the management of northern shrimp fisheries 
 -->
-
+```
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
-::: {.notes}
-I'd like to start with a timeless question in fisheries management
+::: notes
+I'd like to start with a timeless question in fisheries management: how much fish is there in a given stock, and how muchm is it safe to harvest? How does one go about counting fish?
 :::
-------------------------------------------------------------------------
-
-### How much fish are there?
-
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+
+::: notes
+Borrowing from an example by Jesse Agar from the CSF, let's imagine trying to count the amount of trees in a forest. Once you've decided what counts as a tree and not a bush or a sapling, you would like set up sampling areas across the forest.
+:::
 
 ------------------------------------------------------------------------
 
 ### How much fish are there?
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+
+::: notes
+You would then use the resulting samples to infer the amount of tree in the forest, with a given amount of associated uncertainty.
+:::
+
+------------------------------------------------------------------------
+
+### How much fish are there?
+
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+
+::: notes
+Now imagine that the same idea for counting fish, except that fishes move, aggregate, are predated upon at different rates depending on where they move, and are harvested in fisheries. The specifics characteristics of fish populations makes the task of counting fish move beyond the simple sampling process I just described.
+:::
 
 ------------------------------------------------------------------------
 
 <!--# Modelling populations -->
 
-Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
+[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
-[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+::: notes
+Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant
+:::
 
 ------------------------------------------------------------------------
 
 ### Non-stationarity
 
-Models increasingly acknowledge the **non-stationary** nature of wild populations, and work to incorporate environmental fluctuations into dynamic models.
+&nbsp;
 
-Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time.
+Models increasingly acknowledge the **non-stationary** nature of wild populations
 
-[![*Examples of non-stationarity*](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
+&nbsp;
+
+[![Examples of non-stationarity](images/non-stat.png){fig-align="left"}](https://hess.copernicus.org/articles/25/3897/2021/)
+
+::: notes
+Models increasingly acknowledge the **non-stationary** nature of wild populations. Data is said to be non-stationary if its means, variance, and covariance change over time.
+
+Population models designed to answer applied resource management questions, such as **fisheries stock models**, increasingly address how the dynamics of stocks vary across space and time, and models increasingly incorporate environmental fluctuations.
+:::
 
 ------------------------------------------------------------------------
 
@@ -109,7 +133,7 @@ These stocks currently lack a population model to understand the drivers of this
 ::: {layout-ncol="2"}
 ![](images/map.png){fig-align="center"}
 
-[![*Shrimp fishing divisions & Pandalus borealis*](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
+[![Shrimp fishing divisions & Pandalus borealis](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
 :::
 
 ------------------------------------------------------------------------
@@ -153,7 +177,7 @@ The resulting model is a spatial SPM (SSPM), implemented via a R package `sspm`.
 
 1.  Ingestion of variables (biomass, predictors, catch...)
 
-```{.R code-line-numbers="|4,12|6,14"}
+``` {.R code-line-numbers="|4,12|6,14"}
 borealis_dataset <- 
   spm_as_dataset(data = borealis,
                  name = "borealis",
@@ -194,7 +218,7 @@ predator_dataset <-
 
 4.  Computation of productivity values taking into account harvest information.
 
-```{.R}
+``` R
 borealis_dataset_with_catch <-
   spm_aggregate_catch(biomass = borealis_dataset_fitted,
                       catch = catch_data,
@@ -210,7 +234,7 @@ borealis_dataset_with_catch <-
 
 5.  Fitting of SSPMs to smoothed data with GAMs.
 
-```{.R code-line-numbers="|2,3"}
+``` {.R code-line-numbers="|2,3"}
 sspm_fit <- sspm_model_split %>%
   spm(log_productivity ~ cod_lag_1 + other_predator_lag_1 +
         smooth_space() + smooth_space(by=weight_per_km2_lag_1),
@@ -225,7 +249,7 @@ sspm_fit <- sspm_model_split %>%
 
 6.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
 
-[![](images/preds.png){fig-align="center"}]()
+![](images/preds.png){fig-align="center"}
 
 ------------------------------------------------------------------------
 
@@ -245,19 +269,14 @@ Twitter, Github: `@vlucet`
 
 With the support of:
 
-::: {layout-ncol=2}
-
+::: {layout-ncol="2"}
 ![](images/concordia-logo.webp)
 
 ![](images/logo-DFO-wide.jpg)
-
 :::
 
-![](images/nserc.png){width=300px fig-align="center"}
-
+![](images/nserc.png){width="300px" fig-align="center"}
 
 *Thanks to the members of the Pedersen Lab:*
 
 *Eric Pedersen, Fonya Irvine, John-Philip Williams, Kyle Krumsick, Danielle Mac Rae, Alienor Stahl*
-
-
