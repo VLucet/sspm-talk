@@ -393,9 +393,6 @@
 
 <section class="slide level2">
 
-<!--
-Hi, My name is Val and today I will be presenting a R packaged developed for the management of northern shrimp fisheries 
--->
 <h3 id="how-much-fish-are-there">How much fish are there?</h3>
 <div class="quarto-figure quarto-figure-left">
 <figure>
@@ -404,7 +401,7 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 </figure>
 </div>
 <aside class="notes">
-<p>I’d like to start with a timeless question in fisheries management: how much fish is there in a given stock, and how muchm is it safe to harvest? How does one go about counting fish?</p>
+<p>I’d like to start with a timeless question in fisheries management: how much fish is there in a given stock, and how much is it safe to harvest? How does one go about counting fish?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -427,7 +424,7 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 </figure>
 </div>
 <aside class="notes">
-<p>Borrowing from an example by Jesse Agar from the CSF, let’s imagine trying to count the amount of trees in a forest. Once you’ve decided what counts as a tree and not a bush or a sapling, you would like set up sampling areas across the forest.</p>
+<p>Borrowing from an example by Jesse Agar from the CSF, let’s imagine counting the amount of trees in a forest. Once you’ve decided what counts as a tree, you would likely set up sampling areas across the forest.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -473,7 +470,7 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 </figure>
 </div>
 <aside class="notes">
-<p>Now imagine that the same idea for counting fish, except that fishes move, aggregate, are predated upon at different rates depending on where they move, and are harvested in fisheries. The specifics characteristics of fish populations makes the task of counting fish move beyond the simple sampling process I just described.</p>
+<p>Now imagine that your trees move and aggregate, are predated upon at different rates depending on where they are, and are harvested by multiple actors at different time periods. The spatio-temporal variability inherent to fish populations complexifies the task of estimating stock sizes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -485,29 +482,12 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section class="slide level2">
-
-<!--# Modelling populations -->
-<div class="quarto-figure quarto-figure-left">
-<figure>
-<p><a href="https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&amp;t=288"><img data-src="images/log_with_K.png"></a></p>
-<p></p><figcaption aria-hidden="true">Fisheries Economics &amp; Policy: A Closer Look at Fisheries, Conservation Strategy Fund</figcaption><p></p>
-</figure>
-</div>
-<aside class="notes">
-<p>Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<!-- ------------------------------------------------------------------------ -->
+<!-- <!--# Modelling populations -->
+<p>–&gt;</p>
+<!-- [![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/log_with_K.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288) -->
+<!-- ::: notes -->
+<!-- ::: -->
 </section>
 <section class="slide level2">
 
@@ -518,12 +498,125 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 <div class="quarto-figure quarto-figure-left">
 <figure>
 <p><a href="https://hess.copernicus.org/articles/25/3897/2021/"><img data-src="images/non-stat.png"></a></p>
-<p></p><figcaption aria-hidden="true">Examples of non-stationarity</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Yet, stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science</strong></p>
+<aside class="notes">
+<p>Early population models assumed that the conditions governing parameters affecting rate of change (growth rate, carrying capacity) stay constant</p>
+<p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations. Data is said to be non-stationary if its means, variance, and covariance change over time.</p>
+<p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time.</p>
+<p>Treating spatially structured stocks as single unstructured stocks can lead to biased estimates <em>YET</em> stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="modelling-approaches">Modelling approaches</h3>
+<p>&nbsp;</p>
+<ul>
+<li><strong>process-based:</strong> often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) driving population dynamics</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><strong>statistical:</strong> fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions</li>
+</ul>
+<aside class="notes">
+<p>There would be two families of approaches for dealing with non-stationarity</p>
+<p>Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models</p>
+<p>Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="surplus-production-models">Surplus Production Models</h3>
+<p>Surplus production models (SPMs) are based on modelling changes in the total biomass of a stock over time (i.e.&nbsp;<em>surplus production</em>) as a function of stock abundance and fishing pressure:</p>
+<p>&nbsp;</p>
+<p><span class="math display">\[
+B_t = B_{t-1} + P_{t-1} - C_{t-1}
+\]</span> Where <span class="math inline">\(B_t\)</span> is the biomass, <span class="math inline">\(P_t\)</span> is productivity and <span class="math inline">\(C_t\)</span> is harvest (i.e.&nbsp;catch)</p>
+<p>&nbsp;</p>
+<p>SPMs are useful in data-poor contexts, for example in the absence of population structure data</p>
+<aside class="notes">
+<p>One example of well used statistical model are Surplus production models (SPMs)</p>
+<p>SPMs are one of the classic models used in fisheries, and are based on modelling changes in the total biomass of a stock in a given location over time (i.e.&nbsp;<em>surplus production</em>) as a function of current stock abundance and fishing pressure:</p>
+<p>(DESCRIBE EQUATION)</p>
+<p>SPMs are useful in data-poor contexts, for example in the absence of population structure data</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="limitations-of-spms">Limitations of SPMs</h3>
+<p>&nbsp;</p>
+<ol type="1">
+<li>Spatially <strong>constant</strong> productivity</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="2" type="1">
+<li>Stock productivity is affected <strong>only</strong> by stock abundance and fishing.</li>
+</ol>
+<p>&nbsp;</p>
+<ol start="3" type="1">
+<li>Classically, single unstructured stocks with purely <strong>logistic</strong> dynamics</li>
+</ol>
+<aside class="notes">
+<p>[READ]</p>
+<p>These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="an-approach-spatial-spms">An approach: Spatial SPMs</h3>
+<p>To address these limitations, We use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS)</p>
+<p>We apply this approach to the population of <strong>Northern Shrimp</strong> of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space. The resulting model is a spatial SPM (SSPM)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/stats_features.png" width="700"></p>
 </figure>
 </div>
 <aside class="notes">
-<p>Models increasingly acknowledge the <strong>non-stationary</strong> nature of wild populations. Data is said to be non-stationary if its means, variance, and covariance change over time.</p>
-<p>Population models designed to answer applied resource management questions, such as <strong>fisheries stock models</strong>, increasingly address how the dynamics of stocks vary across space and time, and models increasingly incorporate environmental fluctuations.</p>
+<p>To address these limitations, we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the <code>mgcv</code> R package as the backend.</p>
+<p>We apply this approach to the population of <strong>Northern Shrimp</strong> of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space.</p>
+<p>The two main smoothing properties we use is random effects with penalty in time, as well as a Markov Random Field smoother across space</p>
+<p>The resulting model is a spatial SPM (SSPM), implemented via a R package <code>sspm</code>.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -541,37 +634,34 @@ Hi, My name is Val and today I will be presenting a R packaged developed for the
 <h3 id="implications-for-fisheries-management">Implications for fisheries management</h3>
 <p>Fisheries managers are:</p>
 <ol type="1">
-<li>Becoming increasingly interested in how variation in ecosystem factors (predator abundance, abiotic variables) impact the spatiotemporal variability of population parameters such as <strong>productivity</strong>.</li>
-<li>Pushing for more <strong>ecosystem-based management</strong> methods in fisheries management</li>
+<li>Becoming increasingly interested in how variation in ecosystem factors impact the variability of population parameters such as <strong>productivity</strong>.</li>
+<li>Pushing for more <strong>ecosystem-based management</strong> methods</li>
 </ol>
-<p>Treating spatially structured stocks as single unstructured stocks can lead to biased estimates <em>YET</em> stock models that explicitly incorporate spatio-temporal dynamics are still rare in fisheries science</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.researchgate.net/figure/From-single-stock-to-Ecosystem-Based-Management-after-Dolan-et-al-2016_fig1_335802828"><img data-src="images/EBM.png" width="700"></a></p>
+</figure>
+</div>
+<aside class="notes">
+<p>These models have important implocations for fisheries management because…</p>
+<p>[READ]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
-<h3 id="surplus-production-models">Surplus Production Models</h3>
-<p>Surplus production models (SPMs) are one of the classic models used in fisheries, and are based on modelling changes in the total biomass of a stock in a given location over time (i.e.&nbsp;<em>surplus production</em>) as a function of current stock abundance and fishing pressure:</p>
-<p><span class="math display">\[
-B_t = B_{t-1} + P_{t-1} - C_{t-1}
-\]</span> Where <span class="math inline">\(B_t\)</span> is the biomass, <span class="math inline">\(P_t\)</span> is productivity and <span class="math inline">\(C_t\)</span> is harvest (i.e.&nbsp;catch)</p>
-<p>SPMs are useful in data-poor contexts, for example in the absence of population structure data</p>
-</section>
-<section class="slide level2">
-
-<h3 id="limitations-of-spms">Limitations of SPMs</h3>
-<p>SPMS assumptions:</p>
-<ol type="1">
-<li>Spatially <strong>constant</strong> productivity</li>
-<li>Stock productivity is affected <strong>only</strong> by stock abundance and fishing.</li>
-<li>Classically, single unstructured stocks with purely <strong>logistic</strong> dynamics</li>
-</ol>
-<p>These assumptions ignore the effect of global changes that are affecting fisheries, such as climate change, that affect the growth rates of stocks independently of fishing pressure.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="northern-shrimp">Northern Shrimp</h3>
-<p>The Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, which has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime.</p>
-<p>These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region.</p>
-<!-- In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target and managers need better methods that account for varying productivity. -->
+<h3 id="the-northern-shrimp">The Northern Shrimp</h3>
+<p>The Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime.</p>
+<p>&nbsp;</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -589,36 +679,50 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>The Northern Shrimp (<em>Pandalus borealis</em>) in the Newfoundland and Labrador Shelves, has undergone several periods of large-scale biomass change in the last two decades, despite a relatively constant harvest regime.</p>
+<p>These stocks currently lack a population model to understand the drivers of this change, and to predict how fishing pressure and changing environmental conditions may affect future abundance in the region.</p>
+<p>In the context of climate change and shifting ranges, fisheries productivity is likely to be a moving target and managers need better methods that account for varying productivity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
 <h3 id="the-need-for-sspm">The need for <code>sspm</code></h3>
 <ol type="1">
 <li>Fisheries productivity models rarely integrate important spatially-structured ecosystem drivers</li>
-<li>Northern Shrimp populations the Newfoundland and Labrador Shelves currently lacks a model</li>
+<li>Northern Shrimp populations the Newfoundland and Labrador Shelves currently lacks a robust model</li>
 <li>Current SPM models are rarely spatially explicit and usually cannot account for relevant ecosystem drivers</li>
 <li>Fisheries managers lack user-friendly, flexible tools to implement and apply spatial SPMs</li>
 </ol>
-
-<img data-src="images/logo.png" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-<h3 id="modelling-approaches">Modelling approaches</h3>
-<ul>
-<li><p><strong>process-based:</strong> often rely on differential equations and are based on replicating the underlying processes (predation, recruitment, dispersal) driving population dynamics</p></li>
-<li><p><strong>statistical:</strong> fit a regression model to time series of population abundances, abundance indices, or productivities, with some assumed error distribution for variation around predictions.</p></li>
-</ul>
-<p>Statistical models allow for estimation of parameter uncertainty and ranges of model predictions, and for flexibly incorporating potential ecosystem drivers into models</p>
-<p>Statistical models also allow for straight-forward estimation of spatial variation in population parameters such as maximum productivity or density dependence from data, in the absence of theory predicting how these parameters should vary.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://github.com/pedersen-fisheries-lab/sspm"><img data-src="images/logo.png" width="250"></a></p>
+</figure>
+</div>
+<aside class="notes">
+<p>[READ]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section class="slide level2">
-
-<h3 id="spatial-spms">Spatial SPMs</h3>
-<p>we use a statistical approach to fitting SPMs using Generalized Additive Models (GAMS), estimated using the <code>mgcv</code> R package as the backend.</p>
-<p>We apply this approach to the population of Northern Shrimp of the Newfoundland and Labrador Shelves, leveraging the smoothing properties of GAMs to account for varying productivity across time and space.</p>
-<p>The resulting model is a spatial SPM (SSPM), implemented via a R package <code>sspm</code>.</p>
-
-<img data-src="images/stats_features.png" class="r-stretch quarto-figure-center"></section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow">The <code>sspm</code> workflow</h3>
@@ -641,6 +745,22 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <span id="cb1-14"><a href="#cb1-14"></a>                 <span class="at">density =</span> <span class="fu">c</span>(<span class="st">"cod"</span>, <span class="st">"redfish"</span>, <span class="st">"turbot"</span>),</span>
 <span id="cb1-15"><a href="#cb1-15"></a>                 <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon_dec"</span>, <span class="st">"lat_dec"</span>),</span>
 <span id="cb1-16"><a href="#cb1-16"></a>                 <span class="at">boundaries =</span> bounds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>Let’s now look at at the package workflow.</p>
+<p>The first step in the SSPM package is to ingest the datasets relevant to the management of the stock: the biomass of the stock, as well as predictors, such as the biomass of predators.</p>
+<p>The package keeps track of the time variable and later uses it to apply penalties and smoothers properly.</p>
+<p>It also keeps track of which variables represent actual biomass densities within the dataset.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -648,57 +768,188 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <ol start="2" type="1">
 <li>Ingestion and discretization of spatial boundaries into patches.</li>
 </ol>
-
-<img data-src="images/disc_step_trunc.png" class="r-stretch quarto-figure-left"></section>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/disc_step_trunc.png"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>The second step consists in ingesting the sptial boundaries of our model area, and discretizing that space into patches.</p>
+<p>The package allows users to easily discretize their study areas along different discretization schemes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow-2">The <code>sspm</code> workflow</h3>
 <ol start="3" type="1">
 <li>Smoothing data using spatio-temporal GAMs smoothers.</li>
 </ol>
-
-<img data-src="images/disc_step.png" class="r-stretch quarto-figure-left"></section>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/disc_step.png"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Once discretized, biomass and predictors are smoothed to produce an estimate for each patch.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow-3">The <code>sspm</code> workflow</h3>
-<ol start="4" type="1">
-<li>Computation of productivity values taking into account harvest information.</li>
+<ol start="3" type="1">
+<li>Smoothing data using spatio-temporal GAMs smoothers.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>borealis_dataset_with_catch <span class="ot">&lt;-</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">spm_aggregate_catch</span>(<span class="at">biomass =</span> borealis_dataset_fitted,</span>
-<span id="cb2-3"><a href="#cb2-3"></a>                      <span class="at">catch =</span> catch_data,</span>
-<span id="cb2-4"><a href="#cb2-4"></a>                      <span class="at">biomass_variable =</span> <span class="st">"weight_per_km2"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>                      <span class="at">catch_variable =</span> <span class="st">"catch"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>                      <span class="at">corrections =</span> landings_corrections,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>                      <span class="at">fill =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>borealis_dataset_fitted <span class="ot">&lt;-</span>  borealis_dataset <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">spm_smooth</span>(weight_per_km2 <span class="sc">~</span> sfa<span class="sc">+</span><span class="fu">smooth_time</span>(<span class="at">by =</span> sfa) <span class="sc">+</span> <span class="fu">smooth_space</span>() <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>             <span class="fu">smooth_space_time</span>(<span class="at">k =</span> <span class="fu">c</span>(<span class="cn">NA</span>,<span class="dv">30</span>)),</span>
+<span id="cb2-4"><a href="#cb2-4"></a>             <span class="at">boundaries =</span> bounds,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>             <span class="at">keep_fit =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>The smoothing process is highly flexible as it allows for any type of GAM specifications, but the package supports special smoothing terms to improve usability and simplify the modelling process for managers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow-4">The <code>sspm</code> workflow</h3>
-<ol start="5" type="1">
-<li>Fitting of SSPMs to smoothed data with GAMs.</li>
+<ol start="4" type="1">
+<li>Computation of productivity values taking into account harvest information.</li>
 </ol>
-<div class="sourceCode" id="cb3" data-code-line-numbers="|2,3"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>sspm_fit <span class="ot">&lt;-</span> sspm_model_split <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">spm</span>(log_productivity <span class="sc">~</span> cod_lag_1 <span class="sc">+</span> other_predator_lag_1 <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>        <span class="fu">smooth_space</span>() <span class="sc">+</span> <span class="fu">smooth_space</span>(<span class="at">by=</span>weight_per_km2_lag_1),</span>
-<span id="cb3-4"><a href="#cb3-4"></a>      <span class="at">select =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb3-5"><a href="#cb3-5"></a>      <span class="at">family =</span> scat,</span>
-<span id="cb3-6"><a href="#cb3-6"></a>      <span class="at">method=</span><span class="st">"REML"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>borealis_dataset_with_catch <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">spm_aggregate_catch</span>(<span class="at">biomass =</span> borealis_dataset_fitted,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>                      <span class="at">catch =</span> catch_data,</span>
+<span id="cb3-4"><a href="#cb3-4"></a>                      <span class="at">biomass_variable =</span> <span class="st">"weight_per_km2"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>                      <span class="at">catch_variable =</span> <span class="st">"catch"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>                      <span class="at">corrections =</span> landings_corrections,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>                      <span class="at">fill =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>The next step consists in using the harvest data to compute productivities within each patch. These productivities will be the main response variable for the subsequent model.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
 <h3 id="the-sspm-workflow-5">The <code>sspm</code> workflow</h3>
+<ol start="4" type="1">
+<li>Computation of productivity values taking into account harvest information.</li>
+</ol>
+<p>```{.R, code-line-numbers=“|1-2|5-8”} sspm_model &lt;- sspm(biomass = borealis_dataset_with_catch, predictors = predator_dataset_fitted)</p>
+<p>sspm_model_split &lt;- sspm_model %&gt;% spm_split(year_f %in% year_train) %&gt;% spm_lag(c(“log_productivity”, “weight_per_km2”, “NAO”, “cod”, “other_predator” ), 1, default = NA)</p>
+<pre><code>
+::: notes
+Before running the model, the package allows users to combine data, split the data into training and testing sets, as well as lagging relevant model variables.
+:::
+
+------------------------------------------------------------------------
+
+### The `sspm` workflow
+
+5.  Fitting of SSPMs to smoothed data with GAMs.
+
+``` {.R code-line-numbers="|2,3"}
+sspm_fit &lt;- sspm_model_split %&gt;%
+  spm(log_productivity ~ cod_lag_1 + other_predator_lag_1 +
+        smooth_space() + smooth_space(by=weight_per_km2_lag_1),
+      select = TRUE, 
+      family = scat,
+      method="REML")</code></pre>
+<aside class="notes">
+<p>Finally, we run the model, specifying once again a formula using the package-specific smooth terms.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<h3 id="the-sspm-workflow-6">The <code>sspm</code> workflow</h3>
 <ol start="6" type="1">
 <li>Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.</li>
 </ol>
-
-<img data-src="images/preds.png" class="r-stretch quarto-figure-center"></section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/preds.png" width="800"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>The results fo the</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section class="slide level2">
 
 <h3 id="generalizing-the-sspm-approach">Generalizing the SSPM approach</h3>
+<p>The R package <code>sspm</code> is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.</p>
+<p>&nbsp;</p>
+<p>The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.</p>
+<aside class="notes">
 <p>While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package <code>sspm</code> is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.</p>
 <p>The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.</p>
-<p>It includes a range of features to manage biomass and harvest data. Those features are organized in a stepwise workflow, whose implementation is described in more detail in .</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -720,8 +971,21 @@ B_t = B_{t-1} + P_{t-1} - C_{t-1}
 <p><img data-src="images/nserc.png" width="300"></p>
 </figure>
 </div>
-<p><em>Thanks to the members of the Pedersen Lab:</em></p>
+<p><em>Thanks to the members of the Quantitative Fisheries Lab at Concordia University:</em></p>
 <p><em>Eric Pedersen, Fonya Irvine, John-Philip Williams, Kyle Krumsick, Danielle Mac Rae, Alienor Stahl</em></p>
+<aside class="notes">
+<p>Thank you for listening, I’m happy to answer any questions. I’d like to thank our funders as well as all the member of the Quantitative Fisheries Lab at Concordia University</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <p><img src="images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
