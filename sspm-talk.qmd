@@ -14,6 +14,10 @@ format:
 editor: visual
 ---
 
+<!-- ## Slide Title {background-color="white" background-image="images/bg.png" background-size="contain"} -->
+
+<!-- ------------------------------------------------------------------------ -->
+
 ### How much fish are there?
 
 [![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
@@ -235,7 +239,7 @@ In the context of climate change and shifting ranges, fisheries productivity is 
 3.  Current SPM models are rarely spatially explicit and usually cannot account for relevant ecosystem drivers
 4.  Fisheries managers lack user-friendly, flexible tools to implement and apply spatial SPMs
 
-[![](images/logo.png){fig-align="center" width=250px}](https://github.com/pedersen-fisheries-lab/sspm)
+[![](images/logo.png){fig-align="center" width=200px}](https://github.com/pedersen-fisheries-lab/sspm)
 
 ::: notes
 [READ]
@@ -282,7 +286,7 @@ It also keeps track of which variables represent actual biomass densities within
 
 2.  Ingestion and discretization of spatial boundaries into patches.
 
-![](images/disc_step_trunc.png){fig-align="left"}
+![](images/disc_step_trunc.png){fig-align="left" width=600px}
 
 ::: notes
 The second step consists in ingesting the sptial boundaries of our model area, and discretizing that space into patches.
@@ -296,7 +300,7 @@ The package allows users to easily discretize their study areas along different 
 
 3.  Smoothing data using spatio-temporal GAMs smoothers.
 
-![](images/disc_step.png){fig-align="left"}
+![](images/disc_step.png){fig-align="left" width=931px}
 
 ::: notes
 Once discretized, biomass and predictors are smoothed to produce an estimate for each patch.
@@ -388,7 +392,7 @@ Finally, we run the model, specifying once again a formula using the package-spe
 
 7.  Visualization of results, including confidence and prediction intervals, and One step ahead prediction of biomass.
 
-![](images/preds.png){fig-align="center" width=800px}
+![](images/preds.png){fig-align="center" width=750px}
 
 ::: notes
 The results from the model can be plotted. Here, the results are faceted by spatial boundaries (the 4 different shrimp fishing areas)
@@ -448,9 +452,9 @@ Twitter, Github: `@vlucet`
 With the support of:
 
 ::: {layout-ncol="2"}
-![](images/concordia-logo.webp)
+![](images/concordia-logo.webp){width="300px"}
 
-![](images/logo-DFO-wide.jpg)
+![](images/logo-DFO-wide.jpg){width="400px"}
 :::
 
 ![](images/nserc.png){width="300px" fig-align="center"}
