@@ -20,7 +20,7 @@ editor: visual
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_0.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
 I'd like to start with a timeless question in fisheries management: how much fish is there in a given stock, and how much is it safe to harvest? How does one go about counting fish?
@@ -30,7 +30,7 @@ I'd like to start with a timeless question in fisheries management: how much fis
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_1.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
 Borrowing from an example by Jesse Agar from the CSF, let's imagine counting the amount of trees in a forest.
@@ -44,7 +44,7 @@ Once you've decided what counts as a tree, you would likely set up sampling area
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_2.png){fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
 You would then use the resulting samples to infer the amount of tree in the forest, with a given amount of associated uncertainty. You might use some kind of model to make the most of the information contained in the samples.
@@ -54,7 +54,7 @@ You would then use the resulting samples to infer the amount of tree in the fore
 
 ### How much fish are there?
 
-[![Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
+[![*Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund*](images/forest_3.png){alt="Fisheries Economics & Policy: A Closer Look at Fisheries, Conservation Strategy Fund" fig-align="left"}](https://youtu.be/yJjYJ4iS_Gs?list=PLBfu1mD9hk64sgOIH_nUEsndUzACDe-4Y&t=288)
 
 ::: notes
 Now imagine that  your trees move and aggregate, are predated upon at different rates depending on where they are, and are harvested by multiple actors at different time periods. 
@@ -219,7 +219,7 @@ The Northern Shrimp (*Pandalus borealis*) in the Newfoundland and Labrador Shelv
 ::: {layout-ncol="2"}
 ![](images/map.png){fig-align="center"}
 
-[![Shrimp fishing divisions & Pandalus borealis](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
+[![*Shrimp fishing divisions & Pandalus borealis*](images/pandalus_borealis.jpg){fig-align="center"}](https://fisheries.msc.org/en/fisheries/gulf-of-st-lawrence-northern-shrimp-trawl-fishery/@@view)
 :::
 
 ::: notes
@@ -416,17 +416,15 @@ In addition, users can plot the confidence (darker shade) and prediction interva
 
 ------------------------------------------------------------------------
 
-### Generalizing the SSPM approach
+### Conclusion: a general approach to SSPMs
 
 &nbsp;
 
-The R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
-
-&nbsp;
-
-**In summary:**
+While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
 
 The package uses GAMs to estimate spatiotemporally varying biomass, and to estimate SSPMs based on changes in fitted biomass, observed catch, and spatially structured environmental predictors.
+
+[![](images/logo.png){fig-align="center" width=200px}](https://github.com/pedersen-fisheries-lab/sspm)
 
 ::: notes
 While the initial application of this model was modelling Newfoundland and Labrador Northern Shrimp stocks, the R package `sspm` is designed to make spatially-explicit surplus production models (SSPM) simpler to estimate and apply to any spatially structured stock.
